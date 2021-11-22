@@ -14,145 +14,43 @@
 void Ex1(int n)
 {
 	//Your codes here
-	int i, a[4];
-	if (n > 999 && n < 10000)
+	char *digit[] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+	char *to_be_ten[] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+	char *multiple_of_ten[] = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
+	if (n < 0 || n > 9999)
 	{
-		for (i = 0; i < 4; i++)
+		printf("Error! The number must between 0 and 9999");
+	}
+
+	while (n != 0)
+	{
+		if (n >= 1000 && n <= 9999)
 		{
-			a[i] = n % 10;
-			n = n / 10;
+			printf("%s thousand ", digit[n / 1000]);
+			n -= (n / 1000) * 1000;
 		}
-		switch (a[3])
+		else if (n >= 100 && n <= 999)
 		{
-		case 1:
-			printf("one ");
-			break;
-		case 2:
-			printf("two ");
-			break;
-		case 3:
-			printf("three ");
-			break;
-		case 4:
-			printf("four ");
-			break;
-		case 5:
-			printf("five ");
-			break;
-		case 6:
-			printf("six ");
-			break;
-		case 7:
-			printf("seven ");
-			break;
-		case 8:
-			printf("eight ");
-			break;
-		case 9:
-			printf("nine ");
-			break;
+			printf("%s hundred ", digit[n / 100]);
+			n -= (n / 100) * 100;
 		}
-		printf("thousand ");
-		switch (a[2])
+		else if (n >= 20 && n <= 99)
 		{
-		case 1:
-			printf("one ");
-			break;
-		case 2:
-			printf("two ");
-			break;
-		case 3:
-			printf("three ");
-			break;
-		case 4:
-			printf("four ");
-			break;
-		case 5:
-			printf("five ");
-			break;
-		case 6:
-			printf("six ");
-			break;
-		case 7:
-			printf("seven ");
-			break;
-		case 8:
-			printf("eight ");
-			break;
-		case 9:
-			printf("nine ");
-			break;
-		case 0:
-			printf("and ");
-			break;
+			printf("%s ", multiple_of_ten[n / 10]);
+			n -= (n / 10) * 10;
 		}
-		printf("hundred ");
-		switch (a[1])
+		else if (n >= 10 && n <= 19)
 		{
-		case 1:
-			printf("eleven ");
-			break;
-		case 2:
-			printf("twenty ");
-			break;
-		case 3:
-			printf("thirdty ");
-			break;
-		case 4:
-			printf("fourty ");
-			break;
-		case 5:
-			printf("fifty ");
-			break;
-		case 6:
-			printf("sixty ");
-			break;
-		case 7:
-			printf("seventy ");
-			break;
-		case 8:
-			printf("eighty ");
-			break;
-		case 9:
-			printf("ninety ");
-			break;
-		case 0:
-			printf("and ");
-			break;
+			printf("%s ", to_be_ten[n - 10]);
+			n = 0;
 		}
-		switch (a[0])
+		else if (n > 0 && n <= 9)
 		{
-		case 1:
-			printf("one ");
-			break;
-		case 2:
-			printf("two ");
-			break;
-		case 3:
-			printf("three ");
-			break;
-		case 4:
-			printf("four ");
-			break;
-		case 5:
-			printf("five ");
-			break;
-		case 6:
-			printf("six ");
-			break;
-		case 7:
-			printf("seven ");
-			break;
-		case 8:
-			printf("eight ");
-			break;
-		case 9:
-			printf("nine ");
-			break;
+			printf("%s", digit[n]);
+			n = 0;
 		}
 	}
-	else
-		printf("Error, please input again!");
 }
 
 int main(int argc, char *argv[])
