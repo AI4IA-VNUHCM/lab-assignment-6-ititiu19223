@@ -153,7 +153,6 @@ void Ex1(int n)
 	}
 	else
 		printf("Error, please input again!");
-	getch();
 }
 
 int main(int argc, char *argv[])
