@@ -13,12 +13,29 @@ Ex:
 #include <math.h>
 #include <string.h>
 
-void Ex4(char *str){
+void Ex4(char *str)
+{
 	//Your codes here
-	
+	int i = 0, j = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != ' ')
+		{
+			str[j++] = str[i];
+			if (str[i + 1] == ' ')
+			{
+				str[j++] = str[i + 1];
+				i++;
+			}
+		}
+		i++;
+	}
+	str[j] = '\0';
+	printf("%s", str);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	//testing variable, applying it to your algorithm for auto-evaluating
 	char *testcase = argv[1];
 
