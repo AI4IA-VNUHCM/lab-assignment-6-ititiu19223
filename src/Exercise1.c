@@ -8,18 +8,160 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 #include <math.h>
 
-void Ex1(int n){
+void Ex1(int n)
+{
 	//Your codes here
-	
+	int i, a[4];
+	if (n > 999 && n < 10000)
+	{
+		for (i = 0; i < 4; i++)
+		{
+			a[i] = n % 10;
+			n = n / 10;
+		}
+		switch (a[3])
+		{
+		case 1:
+			printf("one ");
+			break;
+		case 2:
+			printf("two ");
+			break;
+		case 3:
+			printf("three ");
+			break;
+		case 4:
+			printf("four ");
+			break;
+		case 5:
+			printf("five ");
+			break;
+		case 6:
+			printf("six ");
+			break;
+		case 7:
+			printf("seven ");
+			break;
+		case 8:
+			printf("eight ");
+			break;
+		case 9:
+			printf("nine ");
+			break;
+		}
+		printf("thousand ");
+		switch (a[2])
+		{
+		case 1:
+			printf("one ");
+			break;
+		case 2:
+			printf("two ");
+			break;
+		case 3:
+			printf("three ");
+			break;
+		case 4:
+			printf("four ");
+			break;
+		case 5:
+			printf("five ");
+			break;
+		case 6:
+			printf("six ");
+			break;
+		case 7:
+			printf("seven ");
+			break;
+		case 8:
+			printf("eight ");
+			break;
+		case 9:
+			printf("nine ");
+			break;
+		case 0:
+			printf("and ");
+			break;
+		}
+		printf("hundred ");
+		switch (a[1])
+		{
+		case 1:
+			printf("eleven ");
+			break;
+		case 2:
+			printf("twenty ");
+			break;
+		case 3:
+			printf("thirdty ");
+			break;
+		case 4:
+			printf("fourty ");
+			break;
+		case 5:
+			printf("fifty ");
+			break;
+		case 6:
+			printf("sixty ");
+			break;
+		case 7:
+			printf("seventy ");
+			break;
+		case 8:
+			printf("eighty ");
+			break;
+		case 9:
+			printf("ninety ");
+			break;
+		case 0:
+			printf("and ");
+			break;
+		}
+		switch (a[0])
+		{
+		case 1:
+			printf("one ");
+			break;
+		case 2:
+			printf("two ");
+			break;
+		case 3:
+			printf("three ");
+			break;
+		case 4:
+			printf("four ");
+			break;
+		case 5:
+			printf("five ");
+			break;
+		case 6:
+			printf("six ");
+			break;
+		case 7:
+			printf("seven ");
+			break;
+		case 8:
+			printf("eight ");
+			break;
+		case 9:
+			printf("nine ");
+			break;
+		}
+	}
+	else
+		printf("Error, please input again!");
+	getch();
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int testcase = atoi(argv[1]);
-	
+
 	Ex1(testcase);
-	
+
 	return 0;
 }
