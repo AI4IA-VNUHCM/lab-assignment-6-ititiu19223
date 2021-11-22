@@ -16,11 +16,11 @@ Ex:
 void Ex3(char *str)
 {
 	//Your codes here
-	int len = strlen(str);
+	int length = strlen(str);
 	char longstr[1000], shortstr[1000];
 	int i = 0, count_long = 0, count_short = 0, longest = 0, shortest = 1000;
 	int idx_long, idx_short;
-	for (i = 0; i < len; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (str[i] != ' ')
 		{
